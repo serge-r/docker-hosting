@@ -10,5 +10,5 @@ RUN yum -y install mariadb-libs libmcrypt libtool-ltdl libXpm libxslt httpd free
 
 COPY content/ /opt/content
 RUN chmod +x /opt/content/bin/setup.sh && sleep 10 && /opt/content/bin/setup.sh
-CMD ["/usr/sbin/httpd -D FOREGROUND"]
+CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 EXPOSE 80 443
