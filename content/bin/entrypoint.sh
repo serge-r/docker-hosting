@@ -3,8 +3,8 @@
 # Velosiped for checking user permissions
 # and mapping user
 
-$NEW_UID=$(stat -c %u /home/sites/public_html)
-$NEW_GID=$(stat -c %g /home/sites/public_html)
+NEW_UID=$(stat -c %u /home/sites/public_html)
+NEW_GID=$(stat -c %g /home/sites/public_html)
 
 echo "I found, that public_html has UID=$NEW_UID and GID=$NEW_GID"
 echo "Creating user with same UID and GID"
