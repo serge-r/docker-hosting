@@ -17,6 +17,9 @@ For use it, you shuold create and mapping directory into container with this str
 
 For resolve issue with users rights, to corret writing into mapping folder, I get owner UID and GID from **public_html** and create user **sites** with same UID and GID into container.
 
+For use a your own *php.ini* file, you must put it into **php-fcgi/** directory.  
+For use a your own *php binary*, you must compile it as cgi-fcgi, and put in into **php-fcgi/** directory as **php**
+
 ## Software into container
 
 * **Apache/2.4.6** - a stock httpd from base centos repo
