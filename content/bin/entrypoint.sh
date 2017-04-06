@@ -12,8 +12,8 @@ echo "Creating user with same UID and GID"
 /usr/sbin/groupadd sites -g $NEW_GID
 /usr/sbin/useradd sites -d /home/sites/ -s /sbin/nologin -u $NEW_UID -g $NEW_GID -M -N
 
-chown -R sites:sites /home/sites
-chown -R sites:sites /var/www/cgi-bin/sites
-chmod o+x /home/sites/
+/usr/bin/chown -R sites:sites /home/sites
+/usr/bin/chown -R sites:sites /var/www/cgi-bin/sites
+/usr/bin/chmod o+x /home/sites/
 
 exec /usr/sbin/httpd -D FOREGROUND
