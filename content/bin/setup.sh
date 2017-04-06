@@ -27,8 +27,3 @@ echo "Copy a Apache config"
 echo "Copy an entrypoint"
 /usr/bin/mv /opt/content/bin/entrypoint.sh /opt
 /usr/bin/chmod +x /opt/entrypoint.sh
-
-echo "Clean opt"
-/usr/bin/rm -rf /opt/content
-
-

@@ -3,6 +3,12 @@
 # Velosiped for checking user permissions
 # and mapping user
 
+if [ -x /opt/content ] ; 
+then 
+	echo "Clean /opt/";
+	/bin/rm -rf /opt/content
+fi
+
 NEW_UID=$(stat -c %u /home/sites/public_html)
 NEW_GID=$(stat -c %g /home/sites/public_html)
 
