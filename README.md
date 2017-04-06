@@ -10,15 +10,15 @@ Tested on ubuntu1~16.04.4 and centOS 7.3.1611:
 ## How it works
 It's simple image for easy deploying a container with a custom php and php.ini to use an any web-app.
 
-For use it, you shuold create and mapping directory into container with this structure:
+You should create and mapping directory into container with this structure:
 * **public_html** - for your content (php,html and other)
 * **logs** - for access and error logs
 * **php-fcgi** (optional) - for use a own php binaries and a php.ini
 
 For resolve issue with users rights, to corret writing into mapping folder, I get owner UID and GID from **public_html** and create user **sites** with same UID and GID into container.
 
-For use a your own *php.ini* file, you must put it into **php-fcgi/** directory.  
-For use a your own *php binary*, you must compile it as cgi-fcgi, and put in into **php-fcgi/** directory as **php**
+For use your own *php.ini* file, you must put in **php-fcgi/** directory.  
+For use your own *php binary*, you must compile it as cgi-fcgi, and put in **php-fcgi/** directory as **php**
 
 ## Software into container
 
@@ -80,7 +80,7 @@ Build an image:
 [root@centos7 ~]#cd docker-hosting/
 [root@centos7 docker-hosting]#docker build ./ -t docker-hosting
 ```
-Make sure, that building was successfully without any errors, and you have a new image, named docker-hosting.
+Make sure, that building was successfully there is no any errors, and you have a new image, named docker-hosting.
 ```
 [root@centos7 docker-hosting]# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -96,7 +96,7 @@ Put some content into **public_html**. I create a simple *phpinfo()* sample:
 ```
 [root@centos7 docker-hosting]#echo '<?php phpinfo(); ?>' > /home/serge/web/public_html/phpinfo.php
 ``` 
-Make sure, that created directories now owned by root. To start container, owner UID and GID must be different from 0. It needed for correct create user into container.
+Make sure, that created directories now owned by root. To start container, owner UID and GID must be different from 0. It necessary to create user into container.
 
 In this example, I make files owned by user **serge**:
 ```
